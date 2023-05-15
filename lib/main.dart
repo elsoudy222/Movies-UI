@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_ui/view/home/home_screen.dart';
 import 'package:movies_ui/view/onboarding/onboarding_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoardingScreen()
+      home: const HomeScreen()
     );
   }
 }

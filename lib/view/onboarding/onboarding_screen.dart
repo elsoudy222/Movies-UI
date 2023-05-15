@@ -2,21 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:movies_ui/core/components/custom_outline.dart';
+import 'package:movies_ui/core/components/masked_image.dart';
 import 'package:movies_ui/core/const/constants.dart';
+
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
-    final screenWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppConstants.kBlackColor,
       body: SizedBox(
@@ -138,10 +134,8 @@ class OnBoardingScreen extends StatelessWidget {
                         end: Alignment.bottomRight,
                         colors: [
                           AppConstants.kPinkColor,
-
                           AppConstants.kGreenColor,
                         ],
-
                       ),
                       width: 160,
                       height: 38,
@@ -154,11 +148,9 @@ class OnBoardingScreen extends StatelessWidget {
                               end: Alignment.bottomRight,
                               colors: [
                                 AppConstants.kPinkColor.withOpacity(0.2),
-
                                 AppConstants.kGreenColor.withOpacity(0.2),
                               ],
-                            )
-                        ),
+                            )),
                         child: Center(
                           child: Text(
                             "Sign Up",
@@ -173,28 +165,32 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                     const Spacer(),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(3, (index) {
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(4, (index) {
                           return Container(
                             height: 7,
                             width: 7,
-                            margin: EdgeInsets.symmetric(horizontal: 4),
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
                             decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: index == 0 
-                                    ? AppConstants.kGreenColor 
-                                    : index == 1 
-                                    ? AppConstants.kWhiteColor.withOpacity(0.2)
-                                    : AppConstants.kWhiteColor.withOpacity(0.2),
+                              shape: BoxShape.circle,
+                              color: index == 0
+                                  ? AppConstants.kGreenColor
+                                  : index == 1
+                                      ? AppConstants.kWhiteColor
+                                          .withOpacity(0.2)
+                                      : AppConstants.kWhiteColor
+                                          .withOpacity(0.2),
                             ),
                           );
-                        })
-                    ),
-                    SizedBox(height: screenHeight * 0.03,)
+                        })),
+                    SizedBox(
+                      height: screenHeight * 0.03,
+                    )
                   ],
                 ),
               ),
             ),
+
           ],
         ),
       ),
